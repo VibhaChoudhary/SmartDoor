@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="This is a sample project for a virtual door application">
+    <meta name="author" content="Vibha Choudhary">
+
+    <title>Virtual Door</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom style css -->
+    <link href="./assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <!-- api gateway generated sdk -->
+    <script src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+
+    <script src="./assets/js/sdk/apigClient.js"></script>
+<!--    <script src="./assets/js/aws-sdk.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.278.1/aws-sdk.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="door-container">
+        <div class="app-name">
+            <h3><span style = "margin-right:4px">
+                <i class="fa fa-camera" style="font-size:30px;color:red"></i>
+            </span>Smart Door Authentication</h3>
+            <button class = "entry-button">Enter</button>
+            <button class = "exit-button" style="display: none;">Exit</button>
+        </div>
+        <div class = "door">
+            <div class="video-container">
+                <video id = "vid" autoplay="true" muted="muted"></video>
+            </div>
+            <div  class="door-left"  style="display: table-cell;">
+                <img src="assets/images/door_left.jpg">
+            </div>
+            <div class="door-right"  style="display: table-cell;">
+                <img src="assets/images/door_right.jpg">
+            </div>
+        </div>
+        <div class = "otp-container" style="display: none">
+            <text>Enter OTP</text>
+            <input type="text" class="otp-input">
+            <button class="otp-submit">Submit</button>
+        </div>
+        <div class="notify" style="display: none"><p style="text-align: center">Sorry, the system couldn't recognise your face!</p></div>
+    </div>
+
+    <script>
+        var sdk = apigClientFactory.newClient({});
+    </script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- application js -->
+    <script src="./assets/js/door.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <!-- Or if you want a more recent alpha version -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> -->
+
+
+</body>
+</html>

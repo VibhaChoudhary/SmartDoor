@@ -1,0 +1,72 @@
+.app-name{
+    text-align: center;
+}
+.door-container{
+    display: table;
+    margin: 0 auto;
+    border: 1px solid red;
+    padding: 20px;
+
+}
+.door-container .video-container{
+    position: absolute;
+    margin-top: 15px;
+    width: 25%;
+    left:50%;
+    transform:translateX(-50%);
+
+}
+.door-container .video-container video {
+    position: relative;
+    left:50%;
+    width: 50%;
+    transform:translateX(-50%);
+}
+
+.door-container .door{
+    margin-top:2px;
+    display: table;
+    border-top: 2px solid #895A2C;
+    border-bottom: 0;
+    border-left: 6px solid #895A2C;
+    border-right: 6px solid #895A2C;
+
+}
+
+.door-container .otp-container {
+    padding: 5px;
+}
+
+.door-container .otp-container text{
+    float:left;
+    padding-right: 4px;
+}
+
+.door-container .otp-container input{
+    padding-right: 3px;
+}
+
+.door-container .otp-container button{
+    float:right;
+}
+
+.welcome{
+    padding: 5px;
+}
+
+@keyframes open {
+    0%{
+        transform: perspective(300px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(300px) rotateY(45deg);
+    }
+}
+@keyframes open2 {
+    0%{
+        transform: perspective(300px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(300px) rotateY(-45deg);
+    }
+}
