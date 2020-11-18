@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="This is a sample project for a virtual door application">
+    <meta name="author" content="Vibha Choudhary">
+
+    <title>New Visitor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom style css -->
+    <link href="./assets/css/main.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <!-- api gateway generated sdk -->
+    <script src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+
+    <script src="./assets/js/sdk/apigClient.js"></script>
+    <script src="./assets/js/aws-sdk.min.js"></script>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="app-name d-flex justify-content-center">
+            <h4><span style = "margin-right:4px">
+                <i class="fa fa-camera" style="font-size:30px;color:red"></i>
+            </span>Smart Door Authentication</h4>
+        </div>
+        <div class = "visitor d-flex justify-content-center">
+             <div  class="v-image">
+                <img id = "photo" src = "assets/images/user.png">
+            </div>
+        </div>
+        <div class = "action  p-2">
+            <text>Do you approve entry of this visitor?</text>
+            <button class="v-approve ml-2">Yes</button>
+            <button class="v-deny ml-2" >No</button>
+        </div>
+        <div class = "v-details form-group" style="display: none">
+            <text>Enter Name</text>
+            <input type="text" class="v-name form-control">
+            <text>Enter Phone</text>
+            <input type="text" class="v-phone form-control">
+            <button class="submit btn btn-primary mt-2">Submit</button>
+        </div>
+        <div class = "notify p-2" style="display: none">
+            <h6>Thank you, your response has been recorded.</h6>
+        </div>
+    </div>
+    <script>
+        var sdk = apigClientFactory.newClient({});
+    </script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- application js -->
+
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/form.js"></script>
+
+
+</body>
+</html>
